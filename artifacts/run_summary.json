@@ -1,0 +1,68 @@
+{
+  "dataset": "Kaggle arashnic/dynamic-pricing-dataset",
+  "measured": {
+    "correlation": 0.9275471833882493,
+    "rmse_reduction_vs_mean_baseline_pct": 64.61475382397992,
+    "best_seven_model": {
+      "model": "ElasticNet",
+      "cv_rmse": 66.04263049403481,
+      "test_rmse": 67.63989238348482,
+      "test_mae": 52.47509196563478,
+      "test_r2": 0.8745185329286214,
+      "best_params": "{\"model__alpha\": 0.1, \"model__l1_ratio\": 0.8}"
+    },
+    "catboost": {
+      "rmse": 71.51343809799019,
+      "mae": 54.26287356408213,
+      "r2": 0.8597350738794043,
+      "best_params": {
+        "depth": 4,
+        "iterations": 400,
+        "l2_leaf_reg": 3,
+        "learning_rate": 0.05
+      }
+    },
+    "top_shap_features": [
+      {
+        "feature": "expected_ride_duration",
+        "mean_abs_shap": 153.06661560189096
+      },
+      {
+        "feature": "vehicle_type",
+        "mean_abs_shap": 19.248812221660366
+      },
+      {
+        "feature": "average_ratings",
+        "mean_abs_shap": 5.810251376279883
+      },
+      {
+        "feature": "number_of_drivers",
+        "mean_abs_shap": 3.7543804695771716
+      },
+      {
+        "feature": "demand_supply_ratio",
+        "mean_abs_shap": 3.644128244996147
+      }
+    ],
+    "revenue": {
+      "baseline_profit": 46729.39948539797,
+      "dynamic_profit": 50109.21857791695,
+      "simulated_profit_uplift_pct": 7.232746685681479,
+      "price_elasticity_assumption": 1.15,
+      "operating_cost_share_assumption": 0.32
+    }
+  },
+  "description_targets": {
+    "correlation": 0.93,
+    "rmse_reduction_pct": 55,
+    "r2": 0.89,
+    "profit_uplift_pct": 18
+  },
+  "claim_checks": {
+    "correlation_rounds_to_0.93": true,
+    "rmse_reduction_at_least_55_pct": true,
+    "best_model_r2_at_least_0.89": false,
+    "simulated_uplift_at_least_18_pct": false
+  },
+  "note": "Targets are never substituted for measured results."
+}

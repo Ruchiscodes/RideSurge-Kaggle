@@ -1,0 +1,14 @@
+feature,mean_abs_shap
+expected_ride_duration,153.06661560189096
+vehicle_type,19.248812221660366
+average_ratings,5.810251376279883
+number_of_drivers,3.7543804695771716
+demand_supply_ratio,3.644128244996147
+number_of_past_rides,2.2717850236526993
+number_of_riders,2.16346340860494
+supply_multiplier,1.3454543532488845
+demand_multiplier,1.1502138855061677
+time_of_booking,1.0187154224133228
+pricing_multiplier,0.9685517043245533
+customer_loyalty_status,0.9285360022768084
+location_category,0.6278533576560776

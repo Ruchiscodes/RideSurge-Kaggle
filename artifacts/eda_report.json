@@ -1,0 +1,42 @@
+{
+  "source": "Kaggle: arashnic/dynamic-pricing-dataset",
+  "rows": 1000,
+  "columns_after_engineering": 14,
+  "missing_values": 0,
+  "duplicates": 0,
+  "duration_cost_correlation": 0.9275471833882493,
+  "zscore_outliers_abs_gt_3": {
+    "number_of_riders": 0,
+    "number_of_drivers": 4,
+    "number_of_past_rides": 0,
+    "average_ratings": 0,
+    "expected_ride_duration": 0,
+    "historical_cost_of_ride": 0,
+    "demand_supply_ratio": 30,
+    "demand_multiplier": 19,
+    "supply_multiplier": 26,
+    "pricing_multiplier": 28
+  },
+  "boxcox": {
+    "number_of_riders": {
+      "lambda": 0.7345025206110427,
+      "skew_before": 0.002163261664542533,
+      "skew_after": -0.13344689057496747
+    },
+    "number_of_drivers": {
+      "lambda": 0.08498091991429302,
+      "skew_before": 0.9617588924264777,
+      "skew_after": -0.021929014852951203
+    },
+    "expected_ride_duration": {
+      "lambda": 0.8605388855832555,
+      "skew_before": -0.13965805969802533,
+      "skew_after": -0.24801200389863387
+    },
+    "historical_cost_of_ride": {
+      "lambda": 0.6743105494363019,
+      "skew_before": 0.2092652381303077,
+      "skew_after": -0.12561514338922347
+    }
+  }
+}

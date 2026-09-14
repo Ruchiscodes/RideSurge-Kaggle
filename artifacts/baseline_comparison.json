@@ -1,0 +1,6 @@
+{
+  "method": "training-mean DummyRegressor",
+  "rmse": 191.15280997910116,
+  "best_model_rmse": 67.63989238348482,
+  "rmse_reduction_pct": 64.61475382397992
+}

@@ -1,0 +1,8 @@
+model,cv_rmse,test_rmse,test_mae,test_r2,best_params
+ElasticNet,66.04263049403481,67.63989238348482,52.47509196563478,0.8745185329286214,"{""model__alpha"": 0.1, ""model__l1_ratio"": 0.8}"
+Ridge,66.06067737210408,67.67382086586802,52.76901768304228,0.8743926171898591,"{""model__alpha"": 1}"
+Linear Regression,66.06471546179891,67.81166167411469,52.87176375268645,0.8738804115629745,{}
+Extra Trees,66.8745988411773,67.93611097270644,51.48110921045434,0.8734170724772727,"{""model__max_depth"": 6, ""model__min_samples_leaf"": 1, ""model__n_estimators"": 200}"
+Gradient Boosting,67.25665792571864,71.3296442984645,54.17990377604256,0.8604551258459914,"{""model__learning_rate"": 0.05, ""model__max_depth"": 2, ""model__n_estimators"": 100}"
+Random Forest,67.61952214312547,73.42373879343567,54.596215171518054,0.8521413412240946,"{""model__max_depth"": 6, ""model__min_samples_leaf"": 1, ""model__n_estimators"": 200}"
+KNN,98.2471927039506,99.17057376930498,80.91468076040897,0.730263682839887,"{""model__n_neighbors"": 9, ""model__weights"": ""distance""}"

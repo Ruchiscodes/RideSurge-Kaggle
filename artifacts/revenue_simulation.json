@@ -1,0 +1,7 @@
+{
+  "baseline_profit": 46729.39948539797,
+  "dynamic_profit": 50109.21857791695,
+  "simulated_profit_uplift_pct": 7.232746685681479,
+  "price_elasticity_assumption": 1.15,
+  "operating_cost_share_assumption": 0.32
+}

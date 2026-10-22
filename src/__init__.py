@@ -1,2 +1,0 @@
-"""RideSurge Kaggle project."""
-

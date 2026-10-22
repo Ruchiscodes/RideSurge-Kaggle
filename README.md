@@ -1,61 +1,42 @@
-# RideSurge — Kaggle Edition
+# RideSurge Notebook Project
 
-End-to-end demand-adaptive dynamic pricing using the CC0 [Kaggle Dynamic Pricing Dataset](https://www.kaggle.com/datasets/arashnic/dynamic-pricing-dataset/data).
+RideSurge is a notebook-first demand-adaptive fare prediction and revenue-simulation project built with the CC0 Kaggle Dynamic Pricing Dataset.
 
-## Reproducible scope
+The entire workflow is contained in `RideSurge_End_to_End.ipynb`:
 
-- EDA with Z-score outlier detection and Box-Cox transformations
-- Pearson duration/cost correlation (0.9275, reported as 0.93)
-- Demand/supply ratio and bounded pricing multipliers
-- Seven regressors tuned with 5-fold `GridSearchCV`
-- Tuned CatBoost deployment model
+- Dataset validation and cleaning
+- Z-score outlier analysis
+- Box-Cox skew analysis
+- Pearson duration-cost correlation
+- Demand-supply feature engineering
+- Seven-model, five-fold GridSearchCV benchmark
+- Dummy-baseline RMSE comparison
+- CatBoost training and model serialization
 - Exact CatBoost SHAP feature rankings
-- Explicit, assumption-based revenue simulation
-- FastAPI inference and Streamlit dashboard
-- Executed Jupyter notebook with EDA, plots, model results, SHAP, inference, and claim audit
-
-Description numbers are stored as targets separately from measured metrics. `train.py` never hard-codes experimental results into measured output.
-
-The RMSE reduction is measured against a training-mean `DummyRegressor`, a reproducible naive baseline. It is not interchangeable with improvement over Linear Regression or a production pricing system.
-
-## Dataset
-
-`data/raw/dynamic_pricing.csv` contains 1,000 rows and 10 columns: riders, drivers, location category, loyalty, past rides, rating, booking time, vehicle type, expected duration, and historical cost. The source is CC0 but is best treated as a simulated educational dataset, not official Uber/Ola records.
+- Fare-inference function
+- Assumption-based profitability simulation
+- Resume-claim audit and project limitations
 
 ## Run
 
 ```powershell
+git clone https://github.com/Ruchiscodes/RideSurge-Kaggle.git
+cd RideSurge-Kaggle
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-python train.py
-python -m pytest -q
+jupyter lab RideSurge_End_to_End.ipynb
 ```
 
-API:
+Run all notebook cells from top to bottom. Training takes several minutes because seven algorithms are evaluated using five-fold cross-validation.
 
-```powershell
-uvicorn app:app --reload
-```
+## Verified measurements
 
-Open `http://127.0.0.1:8000/docs`.
+- Duration-cost Pearson correlation: approximately `0.93`
+- Best model in the verified split: ElasticNet
+- Held-out R²: approximately `0.875`
+- RMSE reduction versus a mean-only baseline: approximately `64.6%`
+- CatBoost held-out R²: approximately `0.86`
+- Assumption-based simulated profit uplift: approximately `7.2%`
 
-Dashboard:
-
-```powershell
-streamlit run dashboard.py
-```
-
-Notebook:
-
-```powershell
-jupyter lab notebooks/RideSurge_EDA_Modeling.ipynb
-```
-
-The notebook loads verified artifacts by default for a fast walkthrough. Set
-`RUN_FULL_TRAINING = True` in its setup cell to rerun the seven-model and
-CatBoost searches.
-
-## Integrity note
-
-Profit uplift is a counterfactual simulation, not causal evidence. Validate pricing elasticity with experiments before making a real business claim. The model predicts historical cost; a production optimizer also needs acceptance/conversion data and policy constraints.
+The project does not claim that the model has been deployed to a public production service or that the simulated uplift is causal business evidence.

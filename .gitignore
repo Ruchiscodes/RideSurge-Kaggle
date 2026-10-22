@@ -1,8 +1,7 @@
 __pycache__/
 *.py[cod]
 .venv/
-.pytest_cache/
-artifacts/*.cbm
-artifacts/*.joblib
+.ipynb_checkpoints/
+artifacts/
 catboost_info/
 

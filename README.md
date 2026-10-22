@@ -12,6 +12,7 @@ End-to-end demand-adaptive dynamic pricing using the CC0 [Kaggle Dynamic Pricing
 - Exact CatBoost SHAP feature rankings
 - Explicit, assumption-based revenue simulation
 - FastAPI inference and Streamlit dashboard
+- Executed Jupyter notebook with EDA, plots, model results, SHAP, inference, and claim audit
 
 Description numbers are stored as targets separately from measured metrics. `train.py` never hard-codes experimental results into measured output.
 
@@ -44,6 +45,16 @@ Dashboard:
 ```powershell
 streamlit run dashboard.py
 ```
+
+Notebook:
+
+```powershell
+jupyter lab notebooks/RideSurge_EDA_Modeling.ipynb
+```
+
+The notebook loads verified artifacts by default for a fast walkthrough. Set
+`RUN_FULL_TRAINING = True` in its setup cell to rerun the seven-model and
+CatBoost searches.
 
 ## Integrity note
 
